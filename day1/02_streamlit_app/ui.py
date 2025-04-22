@@ -1,5 +1,6 @@
 # ui.py
 import streamlit as st
+import streamlit.components.v1 as components
 import pandas as pd
 import time
 from database import save_to_db, get_chat_history, get_db_count, clear_db
