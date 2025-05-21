@@ -11,6 +11,8 @@ import pickle
 import time
 import great_expectations as gx
 
+# テスト用データパスを定義
+DATA_PATH = os.path.join(os.path.dirname(__file__), "./data/Titanic.csv")
 
 class DataLoader:
     """データロードを行うクラス"""
@@ -22,7 +24,7 @@ class DataLoader:
             return pd.read_csv(path)
         else:
             # ローカルのファイル
-            local_path = "data/Titanic.csv"
+            local_path = DATA_PATH
             if os.path.exists(local_path):
                 return pd.read_csv(local_path)
 
