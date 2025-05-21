@@ -59,6 +59,7 @@ def test_data_types(sample_data):
             sample_data[col].dtype == "object"
         ), f"カラム '{col}' がカテゴリカル型ではありません"
     
+    # add Test
     # カテゴリカルカラムの値の型を確認
     for col in categorical_columns:
         unique_vals = sample_data[col].dropna().unique()
@@ -70,8 +71,7 @@ def test_data_types(sample_data):
     survived_vals = sample_data["Survived"].dropna().unique()
     assert set(survived_vals).issubset({"0", "1"}) or set(survived_vals).issubset(
         {0, 1}
-    ), "Survivedカラムには0, 1のみ含まれるべきです"
-
+    ), "Survivedカラムには0, 1のみ含まれるべきです" 
 
 def test_missing_values_acceptable(sample_data):
     """欠損値の許容範囲を確認"""
