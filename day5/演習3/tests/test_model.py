@@ -120,6 +120,11 @@ def test_model_accuracy(train_model):
     # Titanicデータセットでは0.75以上の精度が一般的に良いとされる
     assert accuracy >= 0.75, f"モデルの精度が低すぎます: {accuracy}"
 
+    # 0.9以上の精度だと過学習を疑う
+    assert (
+        accuracy <= 0.90
+    ), f"評価制度が著しく高いです。過学習の可能性があります: {accuracy}"
+
 
 def test_model_inference_time(train_model):
     """モデルの推論時間を検証"""
