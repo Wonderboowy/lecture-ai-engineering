@@ -121,7 +121,9 @@ def test_model_accuracy(train_model):
     assert accuracy >= 0.75, f"モデルの精度が低すぎます: {accuracy}"
 
     # 0.9以上の精度だと過学習を疑う
-    assert accuracy <= 0.90, f"評価制度が著しく高いです。過学習の可能性があります: {accuracy}"
+    assert (
+        accuracy <= 0.90
+    ), f"評価制度が著しく高いです。過学習の可能性があります: {accuracy}"
 
 
 def test_model_inference_time(train_model):
